@@ -23,6 +23,16 @@ exports.addPosts = async(req,res)=>{
 
 }
 
+exports.getAllPosts = async (req,res)=>{
+    try{
+        const allPosts = await posts.find()
+        res.status(200).json(allPosts)
+    }catch(err){
+        res.status(401).json(err)
+
+    }
+}
+
 exports.getuserPosts = async (req,res)=>{
     const userId = req.payload
     try{

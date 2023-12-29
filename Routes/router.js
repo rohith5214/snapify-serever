@@ -10,4 +10,6 @@ router.post('/post/add',jwtMiddleware,multerConfig.single('postImage'),postContr
 router.get('/user/user-posts',jwtMiddleware,postController.getuserPosts)
 router.delete('/user/remove/:id',jwtMiddleware,postController.deleteUserPosts)
 router.put('/user/edit',jwtMiddleware,multerConfig.single("profileImage"),userController.updateUser)
+router.get('/post/get',postController.getAllPosts)
+router.get('/user/get',userController.getAllUsers)
 module.exports = router

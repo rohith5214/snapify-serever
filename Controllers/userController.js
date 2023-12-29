@@ -53,3 +53,13 @@ exports.updateUser = async (req,res)=>{
         res.status(401).json(err)
     }
 }
+
+exports.getAllUsers = async (req,res)=>{
+    try{
+        const allUsers = await users.find()
+        res.status(200).json(allUsers)
+    }catch(err){
+        res.status(401).json(err)
+
+    }
+}
